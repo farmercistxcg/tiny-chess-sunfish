@@ -33,7 +33,7 @@ and contributors, GPL-3.0-only — adapted to the make.fun environment:
 
 ## Files
 
-- `main.py` — the whole engine, **3,330 bytes**. Python 3.13 standard
+- `main.py` — the whole engine, **3,739 bytes**. Python 3.13 standard
   library only; reads no other file.
 - `sunfish_fork.py` — the readable source (sunfish core + env driver).
 - `LICENSE` — GPL-3.0-only (SPDX).
