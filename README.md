@@ -15,9 +15,11 @@ and contributors, GPL-3.0-only — adapted to the make.fun environment:
 - The search is a fixed **75,000 nodes per move** (the house baseline uses
   50,000). The node cap is enforced inside the search, so move choice is
   deterministic — no wall clock is used.
-- Packed with `pyminify` (`--rename-globals --remove-literal-statements
-  --no-hoist-literals`) and `xz --format=lzma --lzma1=preset=9e,pb=0`,
-  embedded as a base85 payload with a small Python unpacker.
+- Packed with the kit's `makefun compress` (`node cli/makefun.mjs
+  compress sunfish_fork.pym.py --out main.py`): an LZMA stream of the
+  pyminified source behind a small stub. The pyminified source itself
+  comes from `pyminify` (`--rename-globals --remove-literal-statements
+  --no-hoist-literals`) of the readable `sunfish_fork.py`.
 
 ## Engine
 
@@ -31,7 +33,7 @@ and contributors, GPL-3.0-only — adapted to the make.fun environment:
 
 ## Files
 
-- `main.py` — the whole engine, **4,089 bytes**. Python 3.13 standard
+- `main.py` — the whole engine, **3,330 bytes**. Python 3.13 standard
   library only; reads no other file.
 - `sunfish_fork.py` — the readable source (sunfish core + env driver).
 - `LICENSE` — GPL-3.0-only (SPDX).
